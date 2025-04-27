@@ -1,0 +1,270 @@
+---
+title: "SMM638 Final Term Project"
+author: "Noor Karaman"
+date: last-modified
+abstract: This report aims to XXX
+format: 
+  html:
+    code-fold: true
+    code-tools: true 
+    code-line-numbers: true
+  pdf: default
+  ipynb: default
+  docx: default
+
+---
+# SMM638 Final Term Project
+## Sonic Business Problem
+
+### To start lets import all the data and modules we will need to analyse the dataset as provided 
+
+```{python}
+import sklearn
+print(sklearn.__version__)
+```
+
+```{python}
+#Load required modules and packages 
+import pandas as pd
+import networkx as nx
+import json
+from collections import Counter
+import scikit-learn as sklearn
+from sklearn.cluster import AgglomerativeClustering
+from scipy.spatial.distance import pdist, squareform
+import matplotlib.pyplot as plt
+import numpy as np
+```
+
+```{python}
+#Load the provided datasets
+edges_path = '/Users/noorkaraman/Desktop/NA_FTP/HR_edges.csv'
+genres_path = '/Users/noorkaraman/Desktop/NA_FTP/HR_genres.json'
+
+#Load friendship network data
+edges = pd.read_csv(edges_path)
+
+#Load genre preferences data
+with open(genres_path, 'r') as file:
+    genres = json.load(file)
+```
+
+
+### Next we start processing our data to create the matrices for use as shown in the descrption file 
+```{python}
+#Genre DF processing
+genres_df = pd.DataFrame([(user, genre) for user, genre_list in genres.items() for genre in genre_list],
+                         columns=['user_id', 'genres'])
+
+
+#Create a genre-user matrix
+genre_user_matrix = genres_df.pivot_table(index='genres', columns='user_id', aggfunc='size', fill_value=0)
+
+#Calculate the genre-genre similarity matrix (Jaccard similarity)
+genre_similarity = pd.DataFrame(
+    1 - squareform(pdist(genre_user_matrix, metric='jaccard')),
+    index=genre_user_matrix.index,
+    columns=genre_user_matrix.index
+)
+
+#Cluster genres based on the similarity matrix
+clustering = AgglomerativeClustering(n_clusters=None, distance_threshold=0.5, affinity='precomputed', linkage='average')
+clusters = clustering.fit_predict(1 - genre_similarity)
+
+#Add clusters to genres for analysis
+genre_clusters = pd.DataFrame({'genre': genre_similarity.index, 'cluster': clusters})
+
+#Summarizing the clusters
+cluster_summary = genre_clusters.groupby('cluster')['genre'].apply(list)
+cluster_summary
+```
+
+
+
+```{python}
+#Load the provided datasets
+edges_path = '/Users/noorkaraman/Desktop/NA_FTP/HR_edges.csv'
+genres_path = '/Users/noorkaraman/Desktop/NA_FTP/HR_genres.json'
+
+#Load friendship network data
+edges = pd.read_csv(edges_path)
+
+#Load genre preferences data
+with open(genres_path, 'r') as file:
+    genres = json.load(file)
+```
+
+
+### Next we start processing our data to create the matrices for use as shown in the descrption file 
+```{python}
+#Convert json into data frame
+genres_df = pd.DataFrame([(user, genre) for user, genre_list in genres.items() for genre in genre_list], columns=['user_id', 'genres'])
+
+
+#Create a genre-user matrix
+genre_user_matrix = genres_df.pivot_table(index='genres', columns='user_id', aggfunc='size', fill_value=0)
+
+#Calculate the genre-genre similarity matrix (Jaccard similarity)
+genre_similarity = pd.DataFrame(
+    1 - squareform(pdist(genre_user_matrix, metric='jaccard')),
+    index=genre_user_matrix.index,
+    columns=genre_user_matrix.index
+)
+```
+
+### Now lets look at cluster based analysis 
+
+```{python}
+#Cluster genres based on similarity
+clustering = AgglomerativeClustering(n_clusters=None, distance_threshold=0.5, metric='precomputed', linkage='average')
+clusters = clustering.fit_predict(1 - genre_similarity)
+
+#Add clusters to genres for analysis
+genre_clusters = pd.DataFrame({'genre': genre_similarity.index, 'cluster': clusters})
+
+#Summarizing the clusters
+cluster_summary = genre_clusters.groupby('cluster')['genre'].apply(list)
+
+#Plot distribution of genres across clusters
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.hist(clusters, bins=np.arange(min(clusters), max(clusters) + 2) - 0.5, align='mid', alpha=0.75)
+ax.set_title('Distribution of Genres Across Clusters')
+ax.set_xlabel('Cluster ID')
+ax.set_ylabel('Number of Genres')
+plt.show()
+```
+
+
+```{python}
+#print("Cluster Summary:")
+print(cluster_summary)
+```
+
+```{python}
+from sklearn.manifold import MDS
+import seaborn as sns
+from scipy.spatial.distance import pdist, squareform
+from sklearn.cluster import AgglomerativeClustering
+#Reduce dimensionality for visualization (MDS)
+mds = MDS(n_components=2, dissimilarity='precomputed', random_state=42)
+genre_coordinates = mds.fit_transform(1 - genre_similarity)
+
+#Create DataFrame for visualization
+genre_visual_df = pd.DataFrame({
+    'x': genre_coordinates[:, 0],
+    'y': genre_coordinates[:, 1],
+    'cluster': clusters,
+    'genre': genre_similarity.index
+})
+
+#Plot the clusters
+plt.figure(figsize=(12, 8))
+sns.scatterplot(data=genre_visual_df, x='x', y='y', hue='cluster', palette='tab20', legend=None, alpha=0.8)
+for i in range(len(genre_visual_df)):
+    plt.text(genre_visual_df.iloc[i]['x'], genre_visual_df.iloc[i]['y'], genre_visual_df.iloc[i]['genre'],
+             fontsize=8, alpha=0.7)
+plt.title('Visualization of Genre Clusters')
+plt.xlabel('MDS Dimension 1')
+plt.ylabel('MDS Dimension 2')
+plt.show()
+```
+
+```{python}
+# Step 1: Analyze Genre Clusters and Consolidation Recommendations
+# Summarize clusters
+cluster_summary = genre_clusters.groupby('cluster')['genre'].apply(list)
+
+# Example recommendations for consolidation and target markets
+consolidation_recommendations = []
+for cluster_id, genres in cluster_summary.items():
+    if len(genres) > 1:
+        consolidation_recommendations.append({
+            'Cluster ID': cluster_id,
+            'Genres': genres,
+            'Consolidation Recommendation': f"Combine genres in Cluster {cluster_id} into one target market."
+        })
+
+# Convert recommendations to DataFrame for review
+recommendations_df = pd.DataFrame(consolidation_recommendations)
+
+# Display recommendations
+print("Genre Consolidation and Target Market Recommendations:")
+print(recommendations_df)
+```
+
+### Next we process the friendship network 
+```{python}
+
+# Create user-user network graph
+user_network = nx.from_pandas_edgelist(edges, source='node_1', target='node_2')
+
+# Network Metrics
+network_metrics = {
+    'Number of Users': user_network.number_of_nodes(),
+    'Number of Connections': user_network.number_of_edges(),
+    'Is Connected': nx.is_connected(user_network),
+    'Average Clustering Coefficient': nx.average_clustering(user_network)
+}
+
+# Identify influential users (based on degree centrality)
+degree_centrality = nx.degree_centrality(user_network)
+top_influencers = sorted(degree_centrality.items(), key=lambda x: x[1], reverse=True)[:10]
+
+# Display network metrics and top influencers
+print("Social Network Metrics:")
+print(network_metrics)
+
+print("\nTop 10 Influential Users (by Degree Centrality):")
+for user, centrality in top_influencers:
+    print(f"User {user}: Centrality = {centrality:.4f}")
+```
+
+```{python}
+#print("\nUser Network Summary:")
+print(user_network_summary)
+```
+
+### back to clustering
+
+```{python}
+# Visualizing Genre Clusters
+# Create a mapping for the cluster sizes
+cluster_sizes = genre_clusters['cluster'].value_counts()
+
+# Prepare a DataFrame for visualization
+cluster_viz_data = pd.DataFrame({
+    'Cluster': cluster_sizes.index,
+    'Number of Genres': cluster_sizes.values
+})
+# Plot cluster sizes
+plt.figure(figsize=(12, 6))
+sns.barplot(data=cluster_viz_data, x='Cluster', y='Number of Genres', palette="viridis")
+plt.title('Number of Genres per Cluster', fontsize=16)
+plt.xlabel('Cluster ID', fontsize=14)
+plt.ylabel('Number of Genres', fontsize=14)
+plt.xticks(rotation=90)
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.tight_layout()
+plt.show()
+```
+
+```{python}
+# Visualize the degree distribution of the user network
+from collections import Counter
+
+# Calculate degree distribution
+degree_sequence = [d for n, d in user_network.degree()]
+degree_counts = Counter(degree_sequence)
+
+# Plot degree distribution
+plt.figure(figsize=(10, 6))
+plt.scatter(list(degree_counts.keys()), list(degree_counts.values()), alpha=0.7)
+plt.title('User Network Degree Distribution', fontsize=16)
+plt.xlabel('Degree (Number of Connections)', fontsize=14)
+plt.ylabel('Number of Users', fontsize=14)
+plt.xscale('log')
+plt.yscale('log')
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.tight_layout()
+plt.show()
+```
