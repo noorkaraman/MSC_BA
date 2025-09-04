@@ -1,0 +1,40 @@
+================================================================================
+MND COMMUNICATION DEVICE - PROMPT EVALUATION REPORT
+Persona: Sarah Ahmed | Setting: Family & Friends
+================================================================================
+
+PERFORMANCE METRICS BY PROMPT:
+----------------------------------------
+                          avg_time  avg_readability  avg_word_count  word_count_compliance  successful_runs
+prompt_name                                                                                                
+optimized_concise             3.90            50.57            7.42                  13.33                9
+optimized_example_driven      3.07            44.86            5.47                   0.00                9
+optimized_minimal             2.46            43.20            4.40                   0.00                9
+optimized_structured          3.75            48.22           11.42                  60.00                9
+original_basic                5.84            65.07            5.27                   0.00               12
+original_organized            7.33            61.44            6.67                   2.22               10
+original_strict               4.09            46.23            5.58                   2.22                9
+
+ORIGINAL vs OPTIMIZED:
+----------------------------------------
+           avg_time  avg_readability  word_count_compliance
+category                                                   
+optimized      3.30            46.71                  18.33
+original       5.75            57.58                   1.48
+
+BEST PERFORMERS:
+----------------------------------------
+⚡ Fastest: optimized_minimal (2.46s)
+Most Readable: original_basic (Score: 65.1)
+Best Word Count Compliance: optimized_structured (60.0%)
+
+RECOMMENDED PROMPT:
+----------------------------------------
+Based on composite scoring: optimized_structured
+Composite Score: 0.420
+
+Sample outputs from optimized_structured:
+Question: How are you feeling today?
+  1) I'm feeling alright, thank you. Just taking things easy and getting a few small tasks done around the house.
+  2) I'm quite steady today. Had a calm morning, focusing on some gentle planning for the week ahead, so that's fine.
+  3) I'm doing okay. The day is progressing smoothly, and I'm just appreciating the quiet moments as they come.

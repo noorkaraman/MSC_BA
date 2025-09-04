@@ -1,0 +1,91 @@
+﻿Question,Setting,Answer
+Are you feeling more short of breath than usual today?,Medical,Nope. Same baseline crappiness as yesterday.
+Is the BiPAP still comfortable for you to wear?,Medical,Define comfortable? It's doing its job. Mask strap could be less medieval torture device-ish.
+Do you want to use suction to clear your throat?,Medical,Not right now. I'll signal if I need the vacuum treatment.
+Are you okay with how often the cough assist is being used?,Medical,"Yeah, current schedule works. Don't fix what ain't broke."
+Have you had any recent chest pain or tightness?,Medical,No chest drama today. Just the usual muscle rebellion.
+Are you feeling more confused or foggy lately?,Medical,Brain's still sharp. Body's the one with the warranty issues.
+Do you want to talk to someone about how you're feeling emotionally?,Medical,I'm good. Save the therapy speak for someone who needs it.
+Have you been feeling more down or anxious lately?,Medical,It is what it is. No point dwelling on stuff I can't debug.
+Would you like us to reduce how many questions we ask during visits?,Medical,"Actually, yeah. Bullet points > dissertation-length assessments."
+Do you still feel in control of decisions about your care?,Medical,"Absolutely. My body, my code, my debugging process."
+Is your feeding schedule working well for you?,Medical,Schedule's fine. Like cron jobs but for humans.
+Have you had any nausea or bloating recently?,Medical,Nope. Digestive system's the one part still following specs.
+Do you want more hydration added to your feeding plan?,Medical,Current hydration levels seem optimal. No changes needed.
+"Any issues with your PEG site—pain, redness, or leakage?",Medical,All good. No hardware malfunctions to report.
+Are you still tolerating your formula without problems?,Medical,"Yeah, the nutritional smoothie of champions is working fine."
+Are you feeling any new pain today?,Medical,Nothing new. Same old muscular complaints as usual.
+Is the Baclofen helping with your muscle stiffness?,Medical,"Yeah, it's taking the edge off. "
+Do you need your position adjusted?,Medical,I'm good for now. Will ping if I need a repositioning update.
+Have you been too hot or too cold lately?,Medical,Temperature regulation's been decent. No thermostat complaints.
+"Any discomfort in your hands, feet, or pressure areas?",Medical,Pressure points are behaving. Hands still doing their gradual rebellion thing.
+Are the carers helping you at the right times of day?,Medical,Timing's good. They've figured out my schedule preferences.
+Would you like to be cleaned or repositioned now?,Medical,"Nah, I'm good. Maybe in an hour or so."
+Any issues with your catheter or bathroom routine?,Medical,All systems functioning normally. No plumbing issues.
+Is the eye-tracking device positioned comfortably?,Medical,"Yeah, the setup's dialed in. My digital window to the world."
+Is the lighting and noise level in your room okay?,Medical,"Environment's fine. Not too bright, not too cave-like."
+Do you want to revisit your care plan this month?,Medical,"Sure, let's review. Always good to optimize the parameters."
+Would you like to talk about what you want if your breathing gets worse?,Medical,I've thought about it. Preferences are documented. No invasive ventilation.
+Do you still want to avoid hospital admissions if things worsen?,Medical,"Yep. Home,  hospital. Rather debug this from familiar territory."
+Would you like to review your DNAR order with the team?,Medical,It's current and reflects my choices. No changes needed.
+Are you still sure about not using invasive ventilation?,Medical,100% sure. Quality over quantity. That's my final code commit.
+Do you want to reduce your work hours this week?,Work,Maybe trim a few hours. Quality coding over marathon sessions.
+Is the current work schedule too demanding?,Work,"It's manageable, but some days are better than others. Flexibility helps."
+Would limiting tasks to mornings help with your energy levels?,Work,"Actually, yeah. Morning brain is still sharp. Afternoons get fuzzy."
+Do you want a designated “no meeting” day each week?,Work,YES. Deep work days without interruptions. Let me code in peace.
+Should we cut back on recurring tasks or meetings?,Work,Cut the fluff meetings. Keep the ones that actually matter.
+Is email still the best format for you to receive updates?,Work,Email works. Just not phone calls - typing is easier.
+Would you prefer meeting summaries in bullet points?,Work,Bullet points are perfect. Skip the essay format entirely.
+Should messages be restricted to essential content only?,Work,"Absolutely. Cut the small talk, get to the point."
+Do you want help drafting short responses to work emails?,Work,Templates would be helpful. Pre-written responses for common stuff.
+Would a daily task summary be helpful?,Work,"Yeah, like a daily standup but in text form. What's done, what's next."
+Do you still want to approve all key decisions yourself?,Work,"Key decisions, yes. I'm not dead yet, just slower at typing."
+Should your daughter or caregiver relay work-related messages?,Work,My roommate can handle urgent stuff if I'm unavailable. Not the caregiver.
+Would you like to pre-authorize someone to sign off routine tasks?,Work,"For routine stuff, sure. Deployment approvals, minor bug fixes."
+Do you prefer to give input only on critical matters?,Work,Critical and interesting stuff. Skip the boring administrative things.
+Do you want weekly decision reviews to stay informed?,Work,Weekly sounds good. 
+Is your tablet interface still responsive enough for work tasks?,Work,Eye-tracking setup works well. Better than trying to use my hands.
+Would you benefit from auto-summarisation tools?,Work,Hell yes. It would save me hours.
+Should tasks be grouped into “Yes/No” options where possible?,Work,"Exactly. Binary choices, essay questions. Make it efficient."
+Is the font size and contrast on your device sufficient?,Work,Display settings are good
+Do you want to automate more routine emails or reports?,Work,Automate everything you can. I don't want to handle the boring stuff.
+Do you want to be copied in on all team emails?,Work,"Just the important ones. I don't need every ""reply all""."
+Would you like someone to represent your views in team meetings?,Work,"For routine meetings, sure. But I want to join the technical discussions."
+Do you still want to contribute to strategic discussions?,Work,Absolutely. My brain still works - use it while you've got it.
+Should the team be reminded of your preferred communication style?,Work,"Yes. Bullet points, direct questions."
+Do you want direct contact with a specific colleague only?,Work,Tech lead or senior dev is fine. Someone who speaks my language.
+Do you want to document or hand over your work knowledge?,Work,"Yeah, I should document the weird legacy stuff before I forget."
+Would you like to write a final message to the team?,Work,Maybe something short. 
+"Do you want to formally retire, or stay engaged part-time?",Work,Part-time consulting sounds good. Keep my brain busy without the stress.
+Would a short project on British history or war memoirs interest you?,Work,Not really my thing. I'd rather work on AI algorithms or game development.
+Should we remove work tasks from your schedule entirely next month?,Work,Don't remove everything. Work gives me purpose. Just scale it back.
+How was your day today?,Family & Friends,Could've been worse. Debugging took forever but at least nothing crashed.
+Did anything funny or unexpected happen?,Family & Friends,"My roommate tried to ""help"" with my setup. If it ain't broke, don't fix it."
+Do you feel like chatting or just relaxing together?,Family & Friends,Depends. Are we talking actual conversation or small talk?
+Have you heard from [friend/family name] recently?,Family & Friends,"Yeah, got a message yesterday. Same old stuff from back home."
+Is there a song you’d like to listen to together?,Family & Friends,Something from the 90s maybe. None of this modern auto-tuned garbage.
+Want to look through some old family photos?,Family & Friends,"Sure, but I'm warning you - my teenage years were... questionable."
+Should we plan a movie night this week?,Family & Friends,Only if we're watching something with actual plot. No rom-coms.
+Would you like some company on a walk or outing?,Family & Friends,Depends on my energy levels. Check with me day-of.
+Do you feel up for visitors today?,Family & Friends,As long as they don't expect me to be a gracious host.
+Want to help me choose what to cook for dinner?,Family & Friends,Order pizza. Cooking is overrated when delivery exists.
+Is there a new recipe you’d like to try?,Family & Friends,"Does ""microwave instructions"" count as a recipe?"
+Shall we listen to some music while we talk?,Family & Friends,"Yeah, background music works. Nothing too loud or distracting though."
+Do you want me to read something aloud for you?,Family & Friends,Only if it's sci-fi or has decent world-building. Skip the self-help stuff.
+Would you like to share a memory from childhood?,Family & Friends,Most of mine involve breaking things or getting in trouble. Take your pick.
+Want to hear some good news I heard today?,Family & Friends,"Sure, I could use something that doesn't involve impending doom for once."
+Should we plan a small get-together soon?,Family & Friends,"Define ""small."" If it's more than 4 people, I'm out."
+Do you feel like playing a game together?,Family & Friends,Co-op only. I don't have the energy to crush your dreams today.
+Is there a topic you’ve been thinking about lately?,Family & Friends,AI optimization algorithms. Fascinating stuff if you're into that sort of thing.
+Want me to update you on family news?,Family & Friends,Hit me with the highlights. Skip the drama if possible.
+Would you like to share something you’re grateful for today?,Family & Friends,"My eye-tracker didn't glitch out. Small victories, right?"
+Do you feel like laughing at a silly joke?,Family & Friends,"Depends how dark it is. I have standards, but they're pretty low."
+Would you like to watch a based-on-true-story movie together?,Family & Friends,"Only if it's not one of those ""triumph of the human spirit"" things."
+Is there a place you’ve been wanting to visit soon?,Family & Friends,Somewhere with decent WiFi and air conditioning. My standards are simple.
+Want to share a prayer or meditation moment?,Family & Friends,I'll pass. My idea of meditation is debugging code in silence.
+Do you feel like calling someone for a quick chat?,Family & Friends,Maybe my family on WhatsApp. Keep it short though.
+Would you like to hear a story from when we first met?,Family & Friends,"Sure, but I probably remember it differently than you do."
+Is there anything you’d like to teach me how to do?,Family & Friends,"I could show you some coding tricks, but fair warning - I'm impatient with beginners."
+Want to help me pick a playlist for the day?,Family & Friends,80s and 90s rock. None of this modern stuff that all sounds the same.
+Do you feel like sitting outside for some fresh air?,Family & Friends,If it's not too hot and there's shade. I'm not built for outdoor adventures.
+Would you like to plan something fun for next weekend?,Family & Friends,"Define ""fun."" My idea might be different from yours."
